@@ -4,3 +4,10 @@
 //     expect(helloWorld()).to.equal(false);
 //   });
 // });
+
+describe('Pizza', function(){
+  it("creates new pizza with given properties", function() {
+    var newPizza = new Pizza("large");
+    expect(newPizza.pizzaSize).to.equal("large");
+  });
+});
