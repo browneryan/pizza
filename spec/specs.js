@@ -7,8 +7,9 @@
 
 describe('Pizza', function(){
   it("creates new pizza with given properties", function() {
-    var newPizza = new Pizza("large","artichokes");
+    var newPizza = new Pizza("large","artichokes",5);
     expect(newPizza.pizzaSize).to.equal("large");
     expect(newPizza.pizzaToppings).to.equal("artichokes");
+    expect(newPizza.pizzaQuantity).to.equal(5);
   });
 });
