@@ -2,3 +2,6 @@
 // var helloWorld = function(){
 //   return false;
 // };
+function Pizza(pizzaSize) {
+  this.pizzaSize = pizzaSize;
+}
