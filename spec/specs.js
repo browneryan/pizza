@@ -13,3 +13,9 @@ describe('Pizza', function(){
     expect(newPizza.pizzaQuantity).to.equal(5);
   });
 });
+describe('Price', function(){
+  it("calculates price based on property values", function(){
+    var newPrice = new Pizza("large","artichokes",5);
+    expect(newPrice()).to.equal(20);
+  });
+});
