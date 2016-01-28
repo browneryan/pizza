@@ -8,7 +8,7 @@ describe('Pizza', function(){
 });
 describe('Price', function(){
   it("calculates price based on property values", function() {
-    var newPrice = new Pizza("large", 3, 5);
-    expect(newPrice.price()).to.equal(13);
+    var newPrice = new Pizza("large", 3, 6);
+    expect(newPrice.price()).to.equal(53);
   });
 });
