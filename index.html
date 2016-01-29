@@ -21,15 +21,15 @@
       <form id="pizzaOrder">
         <div class="form-group">
           <label for="new-first-name">First name</label>
-          <input type="text" class="form-control" id="new-first-name">
+          <input type="text" class="form-control" id="new-first-name" placeholder="First name">
         </div>
         <div class="form-group">
           <label for="new-last-name">Last name</label>
-          <input type="text" class="form-control" id="new-last-name">
+          <input type="text" class="form-control" id="new-last-name" placeholder="Last name">
         </div>
         <div class="form-group">
           <label for="new-phone-number">What is your phone number?</label>
-          <input type="tel" name="number" pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" class="form-control" id="new-phone-number">
+          <input type="tel" name="number" pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" class="form-control" id="new-phone-number" placeholder="Ex: (123) 456-7890">
         </div>
         <div class="form-group">
           <label for="sizes">What size pizza would you like?</label>
@@ -41,16 +41,16 @@
         </div>
         <div class="form-group">
           <label for="quantity">How many pizzas would you like?</label>
-          <input type="number" class="form-control" id="quantity">
+          <input type="number" class="form-control" id="quantity" placeholder="Enter a number">
         </div>
         <label class="checkbox-inline">
-          <input type="checkbox" class="toppings" value="1"> artichokes
+          <input type="checkbox" name="toppingsBoxes"class="toppings" value="artichokes">artichokes
         </label>
         <label class="checkbox-inline">
-          <input type="checkbox" class="toppings" value="1"> sun-dried tomatoes
+          <input type="checkbox" name="toppingsBoxes"class="toppings" value="sun-dried tomatoes">sun-dried tomatoes
         </label>
         <label class="checkbox-inline">
-          <input type="checkbox" class="toppings" value="1"> bell peppers
+          <input type="checkbox" name="toppingsBoxes"class="toppings" value="bell peppers">bell peppers
         </label>
         <br></br>
         <button id="submit" type="submit" class="btn btn-primary" value="Submit">Submit order</button>

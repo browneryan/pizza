@@ -2,7 +2,6 @@ function Contact(firstName, lastName, phoneNumber) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.phoneNumber = phoneNumber;
-  // this.address = [];
 }
 
 function Pizza(pizzaSize, pizzaToppings, pizzaQuantity) {
@@ -32,11 +31,12 @@ Pizza.prototype.price = function() {
 $(document).ready(function() {
   $("form#pizzaOrder").submit(function(event) {
     // $(".showPrice").empty();
-      var total = 0;
-      var totalPizzaToppings = $(":checkbox:checked.toppings").each(function() {
-        total += +this.value;
-      });
-      var inputtedPizzaToppings = total;
+      // var total = 0;
+      // var totalPizzaToppings = $(":checkbox:checked.toppings").each(function() {
+      //   total += +this.value;
+      // });
+      // var inputtedPizzaToppings = total;
+      var inputtedPizzaToppings = $(':checkbox:checked').length;
       var inputtedPizzaSize = $("select#sizes").val();
       var inputtedPizzaQuantity = parseInt($("input#quantity").val());
       var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaToppings, inputtedPizzaQuantity);
@@ -46,11 +46,28 @@ $(document).ready(function() {
       var inputtedPhoneNumber = $("input#new-phone-number").val();
       var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber)
 
+      var toppings = [];
+      $.each($("input[name='toppingsBoxes']:checked"), function(){
+      toppings.push($(this).val());
+      });
+      toppings = toppings.join(', ');
+
       $(".showPrice").show();
       $(".full-name").text(newContact.fullName());
       $(".total-price").text(newPizza.price());
       $(".phone-number").text(inputtedPhoneNumber);
-      // $(".total-price").text(newPizza.price());
+      $(".pizza-size").text(inputtedPizzaSize);
+      $(".pizza-quantity").text(inputtedPizzaQuantity);
+      $(".pizza-toppings").text(toppings);
+
+      // $(".pizza-toppings").text(inputtedPizzaToppings);
+
+      // $("input[type=checked]:checked").each(function(){
+      //   $("ul#addresses").append("<li>" + $(this).val() + "</li>");
+      // });
+
+
+
       $("html, body").animate({ scrollTop: $(document).height() }, "slow");
     event.preventDefault();
   });
