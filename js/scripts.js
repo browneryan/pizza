@@ -19,3 +19,12 @@ Pizza.prototype.price = function() {
   } else {
   } return price;
 }
+
+$(document).ready(function() {
+  $("form").submit(function(event) {
+    $(".showPrice").empty();
+      $("<li>" + price + "</li>").appendTo($(".showPrice"));
+      
+    event.preventDefault();
+  });
+});
