@@ -12,8 +12,9 @@
 
 .showPrice {
   display: none;
+  margin-top: 20px;
 }
 
 #priceGraph {
-  margin-top: 10px;
+  margin-top: 20px;
 }
