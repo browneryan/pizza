@@ -51,7 +51,7 @@ $(document).ready(function() {
       $(".total-price").text(newPizza.price());
       $(".phone-number").text(inputtedPhoneNumber);
       // $(".total-price").text(newPizza.price());
-
+      $("html, body").animate({ scrollTop: $(document).height() }, "slow");
     event.preventDefault();
   });
 });
