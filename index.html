@@ -12,26 +12,27 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <select class="form-control">
-      <option value="small">Small</option>
-      <option value="medium">Medium</option>
-      <option value="large">Large</option>
-    </select>
     <form>
+      <select class="form-control">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select>
       <div class="form-group">
         <label for="pizzaQuantity">How many pizzas would you like?</label>
         <input type="number" class="form-control" id="pizzaQuantity">
       </div>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox1" value="option1"> artichokes
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox2" value="option2"> sun-dried tomatoes
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox3" value="option3"> bell peppers
+      </label>
     </form>
-    <label class="checkbox-inline">
-      <input type="checkbox" id="inlineCheckbox1" value="option1"> artichokes
-    </label>
-    <label class="checkbox-inline">
-      <input type="checkbox" id="inlineCheckbox2" value="option2"> sun-dried tomatoes
-    </label>
-    <label class="checkbox-inline">
-      <input type="checkbox" id="inlineCheckbox3" value="option3"> bell peppers
-    </label>
+
     <button type="submit" class="btn btn-primary" value="Submit">Submit order</button>
     <div class="showPrice">
 
