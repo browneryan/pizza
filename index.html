@@ -12,30 +12,32 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <form>
-      <select class="form-control">
-        <option value="small">Small</option>
-        <option value="medium">Medium</option>
-        <option value="large">Large</option>
-      </select>
-      <div class="form-group">
-        <label for="pizzaQuantity">How many pizzas would you like?</label>
-        <input type="number" class="form-control" id="pizzaQuantity">
-      </div>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="option1"> artichokes
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox2" value="option2"> sun-dried tomatoes
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox3" value="option3"> bell peppers
-      </label>
-    </form>
-
-    <button type="submit" class="btn btn-primary" value="Submit">Submit order</button>
+    <div class="container">
+      <form id="pizzaOrder">
+        <select id="sizes" class="form-control">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+        <div class="form-group">
+          <label for="pizzaQuantity">How many pizzas would you like?</label>
+          <input type="number" class="form-control" id="quantity">
+        </div>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="toppings" value="1"> artichokes
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="toppings" value="1"> sun-dried tomatoes
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="toppings" value="1"> bell peppers
+        </label>
+        <br></br>
+        <button type="submit" class="btn btn-primary" value="Submit">Submit order</button>
+      </form>
+    </div>
     <div class="showPrice">
-
+      <ul></ul>
     </div>
   </body>
 </html>
