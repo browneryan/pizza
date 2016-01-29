@@ -5,32 +5,30 @@ function Pizza(pizzaSize, pizzaToppings, pizzaQuantity) {
 }
 
 Pizza.prototype.price = function() {
-  var price = 10;
-  for (var i = 0; i < this.pizzaToppings; i++) {
-    price += 1;
-   }
-   for (var i = 0; i < this.pizzaQuantity; i++) {
-     price += 5;
+    var price = 5;
+    price += (this.pizzaQuantity * this.pizzaToppings);
+    for (var i = 0; i < this.pizzaQuantity; i++) {
+      price += 5;
     }
     if (this.pizzaSize === "large") {
       price += 10;
     } else if (this.pizzaSize === "medium") {
       price += 5;
-    } else {
+    } else  {
     } return price;
 }
 
-
 $(document).ready(function() {
   $("form#pizzaOrder").submit(function(event) {
-    debugger;
     $(".showPrice").empty();
-
+      var total = 0;
+      var totalPizzaToppings = $(":checkbox:checked.toppings").each(function() {
+        total += +this.value;
+      });
+      var inputtedPizzaToppings = total;
       var inputtedPizzaSize = $("select#sizes").val();
-      var inputtedPizzaToppings = $("input#toppings").val();
-      var inputtedPizzaQuantity = $("input#quantity").val();
+      var inputtedPizzaQuantity = parseInt($("input#quantity").val());
       var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaToppings, inputtedPizzaQuantity);
-
 
       $(".showPrice").text(newPizza.price());
 
