@@ -12,19 +12,28 @@ Pizza.prototype.price = function() {
    for (var i = 0; i < this.pizzaQuantity; i++) {
      price += 5;
     }
-  if (this.pizzaSize === "large") {
-    price += 10;
-  } else if (this.pizzaSize === "medium") {
-    price += 5;
-  } else {
-  } return price;
+    if (this.pizzaSize === "large") {
+      price += 10;
+    } else if (this.pizzaSize === "medium") {
+      price += 5;
+    } else {
+    } return price;
 }
 
+
 $(document).ready(function() {
-  $("form").submit(function(event) {
+  $("form#pizzaOrder").submit(function(event) {
+    debugger;
     $(".showPrice").empty();
-      $("<li>" + price + "</li>").appendTo($(".showPrice"));
-      
+
+      var inputtedPizzaSize = $("select#sizes").val();
+      var inputtedPizzaToppings = $("input#toppings").val();
+      var inputtedPizzaQuantity = $("input#quantity").val();
+      var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaToppings, inputtedPizzaQuantity);
+
+
+      $(".showPrice").text(newPizza.price());
+
     event.preventDefault();
   });
 });
