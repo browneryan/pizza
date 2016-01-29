@@ -1,6 +1,11 @@
 .jumbotron {
   text-align: center;
-  color: white;
+  color: lightyellow;
   text-shadow: 1px 1px black;
   background-image: url("../img/tablecloth.jpg");
+  background-size: 100%;
+}
+
+.container {
+  width: 75%;
 }
