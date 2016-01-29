@@ -19,10 +19,11 @@
     </div>
     <div class="container">
       <form id="pizzaOrder">
+        <label for="sizes">What size pizza would you like?</label>
         <select id="sizes" class="form-control">
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
+          <option value="small">Small 12"</option>
+          <option value="medium">Medium 14"</option>
+          <option value="large">Large 18"</option>
         </select>
         <div class="form-group">
           <label for="quantity">How many pizzas would you like?</label>
@@ -37,11 +38,10 @@
         <label class="checkbox-inline">
           <input type="checkbox" class="toppings" value="1"> bell peppers
         </label>
-        <br></br>
-        <button type="submit" class="btn btn-primary" value="Submit">Submit order</button>
+        <button id="submit" type="submit" class="btn btn-primary" value="Submit">Submit order</button>
       </form>
+      <p id="priceGraph">Your price is:</p>
       <div class="showPrice">
-      <ul></ul>
       </div>
     </div>
   </body>

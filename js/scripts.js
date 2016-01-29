@@ -30,7 +30,9 @@ $(document).ready(function() {
       var inputtedPizzaQuantity = parseInt($("input#quantity").val());
       var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaToppings, inputtedPizzaQuantity);
 
-      $(".showPrice").text(newPizza.price());
+      $(".showPrice").show();
+      $(".showPrice").text(newPizza.price()+'.00');
+      $(".showPrice").prepend("$");
 
     event.preventDefault();
   });
