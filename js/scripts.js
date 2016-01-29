@@ -41,8 +41,16 @@ $(document).ready(function() {
       var inputtedPizzaQuantity = parseInt($("input#quantity").val());
       var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaToppings, inputtedPizzaQuantity);
 
+      var inputtedFirstName = $("input#new-first-name").val();
+      var inputtedLastName = $("input#new-last-name").val();
+      var inputtedPhoneNumber = $("input#new-phone-number").val();
+      var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber)
+
       $(".showPrice").show();
+      $(".full-name").text(newContact.fullName());
       $(".total-price").text(newPizza.price());
+      $(".phone-number").text(inputtedPhoneNumber);
+      // $(".total-price").text(newPizza.price());
 
     event.preventDefault();
   });
