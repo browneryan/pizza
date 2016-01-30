@@ -5,6 +5,7 @@ function Contact(firstName, lastName, phoneNumber) {
 }
 
 function Pizza(pizzaSize, pizzaToppings, pizzaQuantity) {
+  debugger;
   this.pizzaSize = pizzaSize;
   this.pizzaToppings = pizzaToppings;
   this.pizzaQuantity = pizzaQuantity;
@@ -15,27 +16,32 @@ Contact.prototype.fullName = function() {
 }
 
 Pizza.prototype.price = function() {
-    var price = 5;
-    price += (this.pizzaQuantity * this.pizzaToppings);
-    for (var i = 0; i < this.pizzaQuantity; i++) {
-      price += 5;
-    }
-    if (this.pizzaSize === "large") {
-      price += 10;
-    } else if (this.pizzaSize === "medium") {
-      price += 5;
-    } else  {
-    } return price;
+  var price = 0;
+  if(this.pizzaSize === "small"){
+    price += 10 * this.quantity + this.toppings * .50;
+  } else if (this.pizzaSize === "medium") {
+    price += 14 * this.quantity + this.toppings * 1;
+  } else if (this.pizzaSize === "large") {
+    price += 17 * this.quantity + this.toppings * 1.50;
+  } return price;
 }
+
+//     var price = 5;
+//     price += (this.pizzaQuantity * this.pizzaToppings);
+//     // for (var i = 0; i < this.pizzaQuantity; i++) {
+//     //   price += 5;
+//     // }
+//     if (this.pizzaSize === "large") {
+//       price += 10;
+//     } else if (this.pizzaSize === "medium") {
+//       price += 5;
+//     } else  {
+//     } price += (this.pizzaQuantity * price);
+//     return price;
+// }
 
 $(document).ready(function() {
   $("form#pizzaOrder").submit(function(event) {
-    // $(".showPrice").empty();
-      // var total = 0;
-      // var totalPizzaToppings = $(":checkbox:checked.toppings").each(function() {
-      //   total += +this.value;
-      // });
-      // var inputtedPizzaToppings = total;
       var inputtedPizzaToppings = $(':checkbox:checked').length;
       var inputtedPizzaSize = $("select#sizes").val();
       var inputtedPizzaQuantity = parseInt($("input#quantity").val());
@@ -59,14 +65,6 @@ $(document).ready(function() {
       $(".pizza-size").text(inputtedPizzaSize);
       $(".pizza-quantity").text(inputtedPizzaQuantity);
       $(".pizza-toppings").text(toppings);
-
-      // $(".pizza-toppings").text(inputtedPizzaToppings);
-
-      // $("input[type=checked]:checked").each(function(){
-      //   $("ul#addresses").append("<li>" + $(this).val() + "</li>");
-      // });
-
-
 
       $("html, body").animate({ scrollTop: $(document).height() }, "slow");
     event.preventDefault();
