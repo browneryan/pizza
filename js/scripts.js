@@ -5,7 +5,6 @@ function Contact(firstName, lastName, phoneNumber) {
 }
 
 function Pizza(pizzaSize, pizzaToppings, pizzaQuantity) {
-  debugger;
   this.pizzaSize = pizzaSize;
   this.pizzaToppings = pizzaToppings;
   this.pizzaQuantity = pizzaQuantity;
@@ -17,28 +16,16 @@ Contact.prototype.fullName = function() {
 
 Pizza.prototype.price = function() {
   var price = 0;
-  if(this.pizzaSize === "small"){
-    price += 10 * this.quantity + this.toppings * .50;
+  if(this.pizzaSize === "small") {
+    price += (7 * this.pizzaQuantity) + ((this.pizzaToppings * this.pizzaQuantity) * .50);
   } else if (this.pizzaSize === "medium") {
-    price += 14 * this.quantity + this.toppings * 1;
+    price += (11 * this.pizzaQuantity) + ((this.pizzaToppings * this.pizzaQuantity) * 1);
   } else if (this.pizzaSize === "large") {
-    price += 17 * this.quantity + this.toppings * 1.50;
+    price += (14 * this.pizzaQuantity) + ((this.pizzaToppings * this.pizzaQuantity) * 1.50);
+  } else {
+
   } return price;
 }
-
-//     var price = 5;
-//     price += (this.pizzaQuantity * this.pizzaToppings);
-//     // for (var i = 0; i < this.pizzaQuantity; i++) {
-//     //   price += 5;
-//     // }
-//     if (this.pizzaSize === "large") {
-//       price += 10;
-//     } else if (this.pizzaSize === "medium") {
-//       price += 5;
-//     } else  {
-//     } price += (this.pizzaQuantity * price);
-//     return price;
-// }
 
 $(document).ready(function() {
   $("form#pizzaOrder").submit(function(event) {

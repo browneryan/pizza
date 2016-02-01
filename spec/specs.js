@@ -20,7 +20,7 @@ describe('Pizza', function(){
 });
 describe('Price', function(){
   it("calculates price based on property values", function() {
-    var newPrice = new Pizza("large", 3, 2);
-    expect(newPrice.price()).to.equal(31);
+    var newPrice = new Pizza("small", 2, 2);
+    expect(newPrice.price()).to.equal(16);
   });
 });
